@@ -8,7 +8,10 @@ const app = express();
 require('dotenv').config();
 const port = 5555 || process.env.PORT;
 
-app.use(cors());
+app.use(cors({
+    origin:'https://e-commerce-three-xi-83.vercel.app'
+}
+    ));
 app.use(express.json());
 
 app.use('/api/auth',require("./routes/UserRoutes"));
